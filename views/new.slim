@@ -1,0 +1,104 @@
+h1 Report fly tipping
+
+script src="js/coords.js"
+
+form action="/reports" method="post"
+
+  .row
+
+    label for="report[name]"
+      | Your name:
+
+    input type="text" name="report[name]" required="required"
+
+  .row
+
+    label for="report[phone]"
+      | Your phone number:
+
+    input type="tel" name="report[phone]"
+
+  .row
+
+    label for="report[description]"
+      | A description of what has been tipped
+
+    textarea name="report[description]"
+
+  .row
+    fieldset
+      legend Items that have been tipped:
+
+      .row.checkboxes
+
+        .column.one-third
+          div
+            input type="checkbox" name="report[tipped-items-include][]" value="furniture" id="furniture"
+            label for="furniture"
+              | Furniture
+
+          div
+            input type="checkbox" name="report[tipped-items-include][]" value="garden-waste" id="garden-waste"
+            label for="garden-waste"
+              | Garden waste
+
+        .column.one-third
+          div
+            input type="checkbox" name="report[tipped-items-include][]" value="clothes" id="clothes"
+            label for="clothes"
+              | Clothes
+
+          div
+            input type="checkbox" name="report[tipped-items-include][]" value="white-goods" id="white-goods"
+            label for="white-goods"
+              | White goods
+
+        .column.one-third
+          div
+            input type="checkbox" name="report[tipped-items-include][]" value="drug-paraphernalia" id="drug-paraphernalia"
+            label for="drug-paraphernalia"
+              | Drug paraphernalia
+
+          div
+            input type="checkbox" name="report[tipped-items-include][]" value="industrial-waste" id="industrial-waste"
+            label for="industrial-waste"
+              | Industrial or commercial waste
+
+
+
+  .row
+    p
+      | If you are out and reporting the crime using a mobile device, please either take and upload
+        a photo of the dumped material or click the Get Location button below to submit your exact location.
+
+    p
+      ' This information makes finding the offending material
+      strong much easier
+
+
+  .row
+    label for="report[photo]"
+      | Upload a photo of the incident:
+
+    input type="file" name="report[photo]"
+
+  .row
+    .coordinates
+
+      a id="getCoords" href="#" class="button" onclick="getLocation()"
+        | Get Location
+
+      .row
+
+        .column.one-half
+          label for="report[x]"
+            | Latitude
+          input id="x" type="number" name="report[x]" step="0.000001" readonly=true
+
+        .column.one-half
+          label for="report[y]"
+            | Longitude
+          input id="y" type="number" name="report[y]" step="0.000001" readonly=true
+
+  .row
+    input type="submit"
