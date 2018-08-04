@@ -9,11 +9,23 @@ class Report
                 :raw_x, :raw_y
 
   def x
-    @raw_x || coords_from_photo[:x]
+    if @raw_x
+      @raw_x
+    elsif @photo
+      coords_from_photo[:x]
+    else
+      nil
+    end
   end
 
   def y
-    @raw_y || coords_from_photo[:y]
+    if @raw_y
+      @raw_y
+    elsif @photo
+      coords_from_photo[:y]
+    else
+      nil
+    end
   end
 
   private
