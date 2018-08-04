@@ -15,8 +15,14 @@ form input[type="submit"] {
 
 #map {
   height: 400px;
+  margin: 2rem;
 }
 
 .coord {
   display: none;
+}
+
+img {
+  max-width: 800px;
+  margin: 2rem;
 }
