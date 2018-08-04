@@ -20,7 +20,7 @@ class Report
 
   def coords_from_photo
     img = EXIFR::JPEG.new(File.join("public", @photo))
-    { x: img.gps.latitude, y: img.gps.longitude }
+    { x: img.gps&.latitude, y: img.gps&.longitude } if img
   end
 
 end
