@@ -2,11 +2,31 @@
 	padding: 2rem;
 	border: 1px dashed lightgrey;
 	border-radius: 3px;
+  margin: 2rem 0rem;
 }
 
 form .checkboxes label {
 	display: inline;
 	margin-left: 1rem;
+}
+
+form > .row {
+  background-color: snow;
+  padding: 1rem 1.8rem;
+  border-radius: 5px;
+  margin: 1rem 0rem;
+}
+
+form > .row > textarea {
+  width: 100%;
+}
+
+#getCoords {
+  word-wrap: break-word;
+}
+
+form > h3 {
+  margin: 2rem;
 }
 
 form input[type="submit"] {
@@ -25,4 +45,24 @@ form input[type="submit"] {
 img {
   max-width: 800px;
   margin: 2rem;
+}
+
+.info {
+  background-color: linen;
+  border-radius: 5px;
+  padding: 2rem;
+}
+
+input.button-submit {
+  background-color: green;
+  color: white;
+}
+
+input.button-submit:hover {
+  background-color: darkgreen;
+  color: white;
+}
+
+dl > dt {
+  font-weight: 800;
 }

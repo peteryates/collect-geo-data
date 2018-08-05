@@ -22,8 +22,12 @@ h1 Thank you for reporting an incident
         td= @report.tipped_items_include.join(", ")
         td= "#{@report.x}, #{@report.y}"
 
-  p= @report.description
+  dl
+    dt Description
+    dl= @report.description
 
+    dt Location
+    dl= @report.location
 
 .row
   - if @report.x && @report.y

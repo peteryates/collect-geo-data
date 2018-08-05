@@ -6,7 +6,7 @@ require 'pry'
 class Report
   attr_accessor :name, :phone, :description,
                 :tipped_items_include, :photo,
-                :raw_x, :raw_y
+                :location, :raw_x, :raw_y
 
   def x
     if @raw_x
@@ -51,6 +51,7 @@ post '/reports' do
       r.name = p["name"]
       r.phone = p["phone"]
       r.description = p["description"]
+      r.location = p["location"]
       r.tipped_items_include = p["tipped-items-include"]
       r.raw_x = p["x"] unless p["x"].empty?
       r.raw_y = p["y"] unless p["y"].empty?

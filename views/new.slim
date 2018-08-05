@@ -21,9 +21,9 @@ form action="/reports" method="post" enctype="multipart/form-data"
   .row
 
     label for="report[description]"
-      | A description of what has been tipped
+      | A brief description of what's been tipped
 
-    textarea name="report[description]"
+    textarea name="report[description]" rows=8
 
   .row
     fieldset
@@ -65,30 +65,38 @@ form action="/reports" method="post" enctype="multipart/form-data"
               | Industrial or commercial waste
 
 
+  h3 Where is it?
 
   .row
-    p
-      | If you are out and reporting the crime using a mobile device, please either take and upload
-        a photo of the dumped material or click the Get Location button below to submit your exact location.
 
-    p
-      ' This information makes finding the offending material
-      strong much easier
+    label for="report[location]"
+      | Instructions for finding the fly tip
+
+    textarea name="report[location]" rows=8 placeholder="About 100m down the track opposite The Red Lion in Middleton"
 
 
   .row
     label for="report[photo]"
-      | Upload a photo of the incident:
+      | Upload a picture of the fly tip
 
     input type="file" name="report[photo]"
 
-  .row
-    .coordinates
+    p.info If you took the photo with a smartphone and have GPS enabled, we can
+      use the embedded information to pinpoint the location.
 
-      a id="getCoords" href="#" class="button" onclick="getLocation()"
-        | Get Location
+  .row
 
       .row
+
+        p If you are currently standing by the fly tip and filing this report
+          using your smartphone, you can attach the location directly into the
+          submission by clicking this button.
+
+        a id="getCoords" href="" class="button button-primary" onclick="getLocation()"
+
+          | Share my current location
+
+      .row.coordinates
 
         .column.one-half
           label for="report[x]"
@@ -100,5 +108,6 @@ form action="/reports" method="post" enctype="multipart/form-data"
             | Longitude
           input id="y" type="number" name="report[y]" step="0.000001" readonly=true
 
+
   .row
-    input type="submit" class="button button-primary"
+    input type="submit" class="button button-submit"

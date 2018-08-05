@@ -1,4 +1,7 @@
 function getLocation() {
+
+  this.event.preventDefault();
+
   if ("geolocation" in navigator) {
     navigator.geolocation.getCurrentPosition(function(position) {
 

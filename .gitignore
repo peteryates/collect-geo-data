@@ -1,3 +1,4 @@
 *.swp
 *.swo
 public/uploads/*.jpg
+public/uploads/*.jpeg
