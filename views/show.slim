@@ -20,7 +20,12 @@ h1 Thank you for reporting an incident
         td= @report.name
         td= @report.phone
         td= @report.tipped_items_include.join(", ")
-        td= "#{@report.x}, #{@report.y}"
+
+        - if [@report.x, @report.y].all?
+          td= "#{@report.x}, #{@report.y}"
+
+        - else
+          td No coordinates found
 
   dl
     dt Description
